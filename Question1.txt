@@ -1,0 +1,16 @@
+Question 1
+
+1.Process Kill
+pkill -9 gunicorn
+
+2.DB Commands
+select host from information_schema.processlist WHERE ID=connection_id();
+
+3.For version check
+cat package.json |grep version| awk -F : '{print $2}'|awk -F .'{if($3) print $1"."$2"."$3}'|head -1
+
+4.For Average
+awk'{total+=$1;count++}END{avg=total/count;print avg}'num.txt|awk -F.'{print$1"."substr($2,1,2)}'
+
+
+
